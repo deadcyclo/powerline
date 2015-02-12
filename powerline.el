@@ -41,6 +41,10 @@
   "Powerline face 2."
   :group 'powerline)
 
+(defface bjl-active1 '((t (:background "brightyellow" :foreground "black" :inherit mode-line))) ;; TODO: MAKE FOR ALL PCS AND NAME BY THEM AND REMEMBER INACTIVE
+  "Powerline face 1."
+  :group 'powerline)
+
 (defcustom powerline-default-separator (if (window-system)
                                            'arrow
                                          'utf-8)
@@ -391,6 +395,20 @@ static char * %s[] = {
                                         map)))
              (split-string (format-mode-line minor-mode-alist))
              (propertize " " 'face face)))
+
+;;;###autoload
+(defpowerline powerline-wg-name 
+  (let ((name (if (wg-current-workgroup t) (wg-name (wg-current-workgroup)) ""))) 
+    (cond
+     ((string= name "") "")
+     (t (concat name " " (char-to-string #x256e))))))
+
+;;;###autoload
+(defpowerline powerline-wg-number 
+  (let ((num (if (wg-current-workgroup t) (position (wg-current-workgroup) (wg-list t)) -1)))
+    (cond 
+     ((eq num -1) "")
+     (t (concat (char-to-string #x256d) " " (number-to-string num))))))
 
 ;;;###autoload
 (defpowerline powerline-narrow
