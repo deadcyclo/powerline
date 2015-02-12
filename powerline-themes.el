@@ -3,6 +3,7 @@
 ;; Copyright (C) 2012-2013 Donald Ephraim Curtis
 ;; Copyright (C) 2013 Jason Milkins
 ;; Copyright (C) 2012 Nicolas Rougier
+;; Copyright (C) 2015 Brendan Johan Lee
 
 ;; Author: Donald Ephraim Curtis <dcurtis@milkbox.net>
 ;; URL: http://github.com/milkypostman/powerline/
@@ -46,8 +47,10 @@
                                      (when (boundp 'erc-modified-channels-object)
                                        (powerline-raw erc-modified-channels-object face1 'l))
                                      (powerline-major-mode face1 'l)
+				     (if (null window-system)
+					 (powerline-raw (char-to-string #x2605) face1))
                                      (powerline-process face1)
-;;                                     (powerline-minor-modes face1 'l)
+                                     (powerline-minor-modes face1 'l)
                                      (powerline-narrow face1 'l)
                                      (powerline-raw " " face1)
                                      (funcall separator-left face1 face2)
