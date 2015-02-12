@@ -41,8 +41,12 @@
   "Powerline face 2."
   :group 'powerline)
 
-(defface bjl-active1 '((t (:background "brightyellow" :foreground "black" :inherit mode-line))) ;; TODO: MAKE FOR ALL PCS AND NAME BY THEM AND REMEMBER INACTIVE
-  "Powerline face 1."
+(defface powerline-whisky1 '((t (:background "brightyellow" :foreground "black" :inherit mode-line))) ;; TODO: MAKE FOR ALL PCS AND NAME BY THEM AND REMEMBER INACTIVE
+  "Powerline face whisky 1."
+  :group 'powerline)
+
+(defface powerline-whisky2 '((t (:background "black" :foreground "brightyellow" :inherit mode-line))) ;; TODO: MAKE FOR ALL PCS AND NAME BY THEM AND REMEMBER INACTIVE
+  "Powerline face whisky 2."
   :group 'powerline)
 
 (defcustom powerline-default-separator (if (window-system)
@@ -399,16 +403,20 @@ static char * %s[] = {
 ;;;###autoload
 (defpowerline powerline-wg-name 
   (let ((name (if (wg-current-workgroup t) (wg-name (wg-current-workgroup)) ""))) 
-    (cond
-     ((string= name "") "")
-     (t (concat name " " (char-to-string #x256e))))))
+    name))
+    ;; (cond
+    ;;  ((string= name "") "")
+    ;;  (t (concat name " " (char-to-string #x256e))))))
 
 ;;;###autoload
 (defpowerline powerline-wg-number 
   (let ((num (if (wg-current-workgroup t) (position (wg-current-workgroup) (wg-list t)) -1)))
-    (cond 
+    (cond
      ((eq num -1) "")
-     (t (concat (char-to-string #x256d) " " (number-to-string num))))))
+     (t (number-to-string num)))))
+    ;; (cond 
+    ;;  ((eq num -1) "")
+    ;;  (t (concat (char-to-string #x256d) " " (number-to-string num))))))
 
 ;;;###autoload
 (defpowerline powerline-narrow
@@ -427,12 +435,12 @@ static char * %s[] = {
 
 ;;;###autoload
 (defpowerline powerline-vc
-    (when (and (buffer-file-name (current-buffer)) vc-mode)
+    (if (and (buffer-file-name (current-buffer)) vc-mode)
         (if (null window-system)
                 (let ((backend (vc-backend (buffer-file-name (current-buffer)))))
                     (when backend
                         (concat " " (char-to-string #xe0a0) " " (vc-working-revision (buffer-file-name (current-buffer)) backend))))
-            (format-mode-line '(vc-mode vc-mode)))))
+            (format-mode-line '(vc-mode vc-mode))) (concat "  " (char-to-string #x2718) " ")))
 
 ;;;###autoload
 (defpowerline powerline-buffer-size
