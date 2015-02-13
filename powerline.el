@@ -41,12 +41,20 @@
   "Powerline face 2."
   :group 'powerline)
 
-(defface powerline-whisky1 '((t (:background "brightyellow" :foreground "black" :inherit mode-line))) ;; TODO: MAKE FOR ALL PCS AND NAME BY THEM AND REMEMBER INACTIVE
-  "Powerline face whisky 1."
+(defface powerline-yellow1 '((t (:background "brightyellow" :foreground "black" :inherit mode-line)))
+  "Powerline face yellow 1."
   :group 'powerline)
 
-(defface powerline-whisky2 '((t (:background "black" :foreground "brightyellow" :inherit mode-line))) ;; TODO: MAKE FOR ALL PCS AND NAME BY THEM AND REMEMBER INACTIVE
-  "Powerline face whisky 2."
+(defface powerline-yellow2 '((t (:background "black" :foreground "brightyellow" :inherit mode-line)))
+  "Powerline face yellow 2."
+  :group 'powerline)
+
+(defface powerline-red1 '((t (:background "magenta" :foreground "black" :inherit mode-line)))
+  "Powerline face red 1."
+  :group 'powerline)
+
+(defface powerline-red2 '((t (:background "black" :foreground "magenta" :inherit mode-line)))
+  "Powerline face red 2."
   :group 'powerline)
 
 (defcustom powerline-default-separator (if (window-system)

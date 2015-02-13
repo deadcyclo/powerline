@@ -30,9 +30,16 @@
                           (mode-line (if active 'mode-line 'mode-line-inactive))
                           (face1 (if active 'powerline-active1 'powerline-inactive1))
                           (face2 (if active 'powerline-active2 'powerline-inactive2))
-			  ;; TODO Base these on hostname
-			  (face3 (if active 'powerline-whisky1 'powerline-inactive1)) ;; TODO PROPER INACTIVE
-			  (face4 (if active 'powerline-whisky2 'powerline-inactive1)) ;; TODO PROPER INACTIVE
+			  (face3 (cond
+				  ((string= system-name "nobrelee2")
+				   (if active 'powerline-red1 'powerline-inactive1)) ;; TODO PROPER INACTIVE
+				  (t 
+				   (if active 'powerline-red1 'powerline-inactive1)))) ;; TODO PROPER INACTIVE
+			  (face4 (cond
+				  ((string= system-name "nobrelee2")
+				   (if active 'powerline-yellow2 'powerline-inactive1)) ;; TODO PROPER INACTIVE
+				  (t 
+				   (if active 'powerline-yellow2 'powerline-inactive1)))) ;; TODO PROPER INACTIVE
                           (separator-left (intern (format "powerline-%s-%s"
                                                           powerline-default-separator
                                                           (car powerline-default-separator-dir))))
