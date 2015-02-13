@@ -3,6 +3,7 @@
 ;; Copyright (C) 2012-2013 Donald Ephraim Curtis
 ;; Copyright (C) 2013 Jason Milkins
 ;; Copyright (C) 2012 Nicolas Rougier
+;; Copyright (C) 2015 Brendan Johan Lee
 
 ;; Author: Donald Ephraim Curtis <dcurtis@milkbox.net>
 ;; URL: http://github.com/milkypostman/powerline/
@@ -45,16 +46,44 @@
   "Powerline face yellow 1."
   :group 'powerline)
 
+(defface powerline-yellow1-inactive '((t (:background "grey30" :foreground "brightyellow" :inherit mode-line)))
+  "Powerline face yellow 1 inactive."
+  :group 'powerline)
+
 (defface powerline-yellow2 '((t (:background "black" :foreground "brightyellow" :inherit mode-line)))
   "Powerline face yellow 2."
+  :group 'powerline)
+
+(defface powerline-yellow2-inactive '((t (:background "grey40" :foreground "brightyellow" :inherit mode-line)))
+  "Powerline face yellow 2 inactive."
   :group 'powerline)
 
 (defface powerline-red1 '((t (:background "magenta" :foreground "black" :inherit mode-line)))
   "Powerline face red 1."
   :group 'powerline)
 
+(defface powerline-red1-inactive '((t (:background "grey30" :foreground "magenta" :inherit mode-line)))
+  "Powerline face red 1 inactive."
+  :group 'powerline)
+
 (defface powerline-red2 '((t (:background "black" :foreground "magenta" :inherit mode-line)))
   "Powerline face red 2."
+  :group 'powerline)
+
+(defface powerline-red2-inactive '((t (:background "grey40" :foreground "magenta" :inherit mode-line)))
+  "Powerline face red 2 inactive."
+  :group 'powerline)
+
+(defface powerline-spacer '((t (:background "color-237" :foreground "color-237" :inherit mode-line)))
+  "Powerline face space between sides."
+  :group 'powerline)
+
+(defface powerline-spacer-red '((t (:background "color-237" :foreground "magenta" :inherit mode-line)))
+  "Powerline face space between sides."
+  :group 'powerline)
+
+(defface powerline-spacer-yellow '((t (:background "color-237" :foreground "brightyellow" :inherit mode-line)))
+  "Powerline face space between sides."
   :group 'powerline)
 
 (defcustom powerline-default-separator (if (window-system)

@@ -31,15 +31,21 @@
                           (face1 (if active 'powerline-active1 'powerline-inactive1))
                           (face2 (if active 'powerline-active2 'powerline-inactive2))
 			  (face3 (cond
-				  ((string= system-name "nobrelee2")
-				   (if active 'powerline-red1 'powerline-inactive1)) ;; TODO PROPER INACTIVE
+				  ((string= system-name "nobrelee2uuu")
+				   (if active 'powerline-red1 'powerline-red1-inactive))
 				  (t 
-				   (if active 'powerline-yellow1 'powerline-inactive1)))) ;; TODO PROPER INACTIVE
+				   (if active 'powerline-yellow1 'powerline-yellow1-inactive))))
 			  (face4 (cond
-				  ((string= system-name "nobrelee2")
-				   (if active 'powerline-red2 'powerline-inactive1)) ;; TODO PROPER INACTIVE
+				  ((string= system-name "nobrelee2uuu")
+				   (if active 'powerline-red2 'powerline-red2-inactive))
 				  (t 
-				   (if active 'powerline-yellow2 'powerline-inactive1)))) ;; TODO PROPER INACTIVE
+				   (if active 'powerline-yellow2 'powerline-yellow2-inactive))))
+			  (face5 'powerline-spacer)
+			  (face6 (cond
+				  ((string= system-name "nobrelee2uuuuuu") 
+				   'powerline-spacer-red)
+				  (t 
+				   'powerline-spacer-yellow)))
                           (separator-left (intern (format "powerline-%s-%s"
                                                           powerline-default-separator
                                                           (car powerline-default-separator-dir))))
@@ -50,7 +56,7 @@
                                      (powerline-buffer-size face3 'l)
                                      (powerline-raw mode-line-mule-info face3 'l)
 				     (powerline-raw " " face3)
-				     ;; TODO: Clock & battery information somewhere
+				     ;; TODO: Clock & battery information somewhere?
 				     (funcall separator-left face3 face4)
 				     (powerline-raw " " face4)
                                      (powerline-buffer-id face4 'l)
@@ -76,9 +82,9 @@
                                      ;(funcall separator-left face1 face2)
 				     ;; TODO: LOOK AT VC - See if I can add dirty working directory symbol
                                      (powerline-vc face4 'r)
-				     (funcall separator-left face4 face1)))
-                          (rhs (list (powerline-raw global-mode-string face1 'r)
-                                     (funcall separator-right face1 face4)
+				     (funcall separator-left face4 face5)))
+                          (rhs (list (powerline-raw global-mode-string face6 'r)
+                                     (funcall separator-right face5 face4)
                                      (if (null window-system)
                                              (powerline-raw (concat " " (char-to-string #xe0a1)) face4))
                                      (powerline-raw "%4l" face4 'l)
@@ -89,7 +95,7 @@
                                      (powerline-raw "%6p" face3 'r)
                                      (powerline-hud face3 face4))))
                      (concat (powerline-render lhs)
-                             (powerline-fill face1 (powerline-width rhs))
+                             (powerline-fill face5 (powerline-width rhs))
                              (powerline-render rhs)))))))
 
 ;;;###autoload
