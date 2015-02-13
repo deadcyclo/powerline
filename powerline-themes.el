@@ -34,10 +34,10 @@
 				  ((string= system-name "nobrelee2")
 				   (if active 'powerline-red1 'powerline-inactive1)) ;; TODO PROPER INACTIVE
 				  (t 
-				   (if active 'powerline-red1 'powerline-inactive1)))) ;; TODO PROPER INACTIVE
+				   (if active 'powerline-yellow1 'powerline-inactive1)))) ;; TODO PROPER INACTIVE
 			  (face4 (cond
 				  ((string= system-name "nobrelee2")
-				   (if active 'powerline-yellow2 'powerline-inactive1)) ;; TODO PROPER INACTIVE
+				   (if active 'powerline-red2 'powerline-inactive1)) ;; TODO PROPER INACTIVE
 				  (t 
 				   (if active 'powerline-yellow2 'powerline-inactive1)))) ;; TODO PROPER INACTIVE
                           (separator-left (intern (format "powerline-%s-%s"
