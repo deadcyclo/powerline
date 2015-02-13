@@ -33,17 +33,23 @@
 			  (face3 (cond
 				  ((string= system-name "nobrelee2")
 				   (if active 'powerline-red1 'powerline-red1-inactive))
+				  ((string= system-name "gsmblog.net")
+				   (if active 'powerline-green1 'powerline-green1-inactive))
 				  (t 
 				   (if active 'powerline-yellow1 'powerline-yellow1-inactive))))
 			  (face4 (cond
 				  ((string= system-name "nobrelee2")
 				   (if active 'powerline-red2 'powerline-red2-inactive))
+				  ((string= system-name "gsmblog.net")
+				   (if active 'powerline-green2 'powerline-green2-inactive))
 				  (t 
 				   (if active 'powerline-yellow2 'powerline-yellow2-inactive))))
 			  (face5 'powerline-spacer)
 			  (face6 (cond
 				  ((string= system-name "nobrelee2") 
 				   'powerline-spacer-red)
+				  ((string= system-name "gsmblog.net") 
+				   'powerline-spacer-green)
 				  (t 
 				   'powerline-spacer-yellow)))
                           (separator-left (intern (format "powerline-%s-%s"
