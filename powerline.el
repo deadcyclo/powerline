@@ -66,12 +66,20 @@
   "Powerline face green 1."
   :group 'powerline)
 
+(defface powerline-blue1 '((t (:background "brightblue" :foreground "black" :inherit mode-line)))
+  "Powerline face blue 1."
+  :group 'powerline)
+
 (defface powerline-red1-inactive '((t (:background "grey30" :foreground "magenta" :inherit mode-line)))
   "Powerline face red 1 inactive."
   :group 'powerline)
 
 (defface powerline-green1-inactive '((t (:background "grey30" :foreground "green" :inherit mode-line)))
   "Powerline face green 1 inactive."
+  :group 'powerline)
+
+(defface powerline-blue1-inactive '((t (:background "grey30" :foreground "brightblue" :inherit mode-line)))
+  "Powerline face blue 1 inactive."
   :group 'powerline)
 
 (defface powerline-red2 '((t (:background "black" :foreground "magenta" :inherit mode-line)))
@@ -82,12 +90,20 @@
   "Powerline face green 2."
   :group 'powerline)
 
+(defface powerline-blue2 '((t (:background "black" :foreground "brightblue" :inherit mode-line)))
+  "Powerline face blue 2."
+  :group 'powerline)
+
 (defface powerline-red2-inactive '((t (:background "grey40" :foreground "magenta" :inherit mode-line)))
   "Powerline face red 2 inactive."
   :group 'powerline)
 
 (defface powerline-green2-inactive '((t (:background "grey40" :foreground "green" :inherit mode-line)))
   "Powerline face green 2 inactive."
+  :group 'powerline)
+
+(defface powerline-blue2-inactive '((t (:background "grey40" :foreground "brightblue" :inherit mode-line)))
+  "Powerline face blue 2 inactive."
   :group 'powerline)
 
 (defface powerline-spacer '((t (:background "color-237" :foreground "color-237" :inherit mode-line)))
@@ -103,6 +119,10 @@
   :group 'powerline)
 
 (defface powerline-spacer-green '((t (:background "color-237" :foreground "green" :inherit mode-line)))
+  "Powerline face space between sides."
+  :group 'powerline)
+
+(defface powerline-spacer-blue '((t (:background "color-237" :foreground "brightblue" :inherit mode-line)))
   "Powerline face space between sides."
   :group 'powerline)
 
